@@ -1,0 +1,66 @@
+[project]
+name = 'archetype-pushes'
+requires-python = '==3.12'
+
+
+[tool.mypy]
+explicit_package_bases = 1
+python_version = '3.12'
+
+disable_error_code = ['import-untyped', 'prop-decorator']
+disallow_incomplete_defs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+
+
+[tool.ruff]
+fix = true
+line-length = 120
+show-fixes = true
+target-version = 'py312'
+
+
+[tool.ruff.format]
+docstring-code-line-length = 88
+quote-style = 'single'
+
+
+[tool.ruff.lint]
+ignore = [
+    'A002', 'ANN002', 'ANN003', 'ARG', 'COM812', 'CPY001', 'D100', 'D104', 'D105', 'D106', 'D107', 'D203', 'D205',
+    'D213', 'D400', 'D406', 'D407', 'D413', 'D415', 'DJ001', 'DJ008', 'E712', 'FURB140', 'G004', 'ISC001', 'N802',
+    'N999', 'PLC0414', 'PLR2004', 'RUF001', 'RUF003', 'RUF010', 'S311', 'TC003', 'TD003', 'TID252',
+]
+select = ['ALL']
+
+
+[tool.ruff.lint.flake8-annotations]
+allow-star-arg-any = true
+ignore-fully-untyped = true
+
+
+[tool.ruff.lint.flake8-pytest-style]
+fixture-parentheses = false
+mark-parentheses = false
+
+
+[tool.ruff.lint.flake8-quotes]
+inline-quotes = 'single'
+
+
+[tool.ruff.lint.isort]
+section-order = ['future', 'standard-library', 'third-party', 'fastapi-section', 'first-party', 'local-folder']
+
+
+[tool.ruff.lint.isort.sections]
+'fastapi-section' = ['fastapi', 'pydantic', 'pydantic_settings']
+
+
+[tool.ruff.lint.pycodestyle]
+max-doc-length = 88
+
+
+[tool.ruff.lint.pylint]
+max-args = 6

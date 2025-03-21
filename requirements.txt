@@ -1,0 +1,7 @@
+fastapi[standard]==0.115.*
+google-auth==2.38.*
+httpx[http2]==0.28.*
+pydantic-settings==2.8.*
+pyjwt==2.10.*
+redis==5.2.*
+requests==2.32.*
